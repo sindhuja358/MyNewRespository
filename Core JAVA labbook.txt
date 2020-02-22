@@ -1,0 +1,1951 @@
+
+Lab 2: Language Fundamentals, Classes and Objects 
+
+1).package vjitCapgemini;
+
+public class PersonExample {
+
+	public static void main(String[] args) {
+		System.out.println("First Name: Divya\nLast Name: Bharathi"
+				+"\nGender: F\nAge: 20\nWeight: 85.55");
+
+	}
+
+}
+...
+First Name: Divya
+Last Name: Bharathi
+Gender: F
+Age: 20
+Weight: 85.55
+--------------------------------------------------------------------------------------------------------------------------
+2).
+package vjitCapgemini;
+
+import java.util.Scanner;
+
+public class PersonExample {
+
+	public static void main(String[] args) {
+		/*System.out.println("First Name: Divya\nLast Name: Bharathi"
+				+"\nGender: F\nAge: 20\nWeight: 85.55");
+		*/
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		if(num<0)
+			System.out.println("Negative");
+		else
+			System.out.println("Positive");
+	}
+
+}
+...
+1
+Positive
+----------------------------------------------------------------------------------------------------------------------------
+3).
+package vjitCapgemini;
+
+public class PersonMain {
+
+	public static void main(String[] args) {
+		
+		PersonDetails p=new PersonDetails("Sindhuja","Vembadi",'f');
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p.getFirstName());
+		System.out.println("lastname :"+p.getLastName());
+		System.out.println("gender :"+p.getGender());
+		
+		PersonDetails p1=new PersonDetails("Madhu","Vembadi",'m');
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p1.getFirstName());
+		System.out.println("lastname :"+p1.getLastName());
+		System.out.println("gender :"+p1.getGender());
+		PersonDetails p2=new PersonDetails("Madhava","Yedla",'m');
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p2.getFirstName());
+		System.out.println("lastname :"+p2.getLastName());
+		System.out.println("gender :"+p2.getGender());
+	
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------------------
+4).package vjitCapgemini;
+public class PersonMain {
+
+	public static void main(String[] args) {
+		
+		PersonDetails p=new PersonDetails("Sindhuja","Vembadi",'f');
+		System.out.println("PersonDetails Details");
+		System.out.println("------------------------");
+		System.out.println("Firstname :"+p.getFirstName());
+		System.out.println("lastname :"+p.getLastName());
+		System.out.println("gender :"+p.getGender());
+		System.out.println("Number :"+p.getNumber());
+		
+		PersonDetails p1=new PersonDetails("Madhu","Vembadi",'m');
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p1.getFirstName());
+		System.out.println("lastname :"+p1.getLastName());
+		System.out.println("gender :"+p1.getGender());
+		System.out.println("Number :"+p.getNumber());
+		PersonDetails p2=new PersonDetails("Madhava,"Yedla",'m');
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p2.getFirstName());
+		System.out.println("lastname :"+p2.getLastName());
+		System.out.println("gender :"+p2.getGender());
+		System.out.println("Number :"+p.getNumber());
+	
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------
+5).package vjitCapgemini;
+
+public class PersonMain {
+
+	enum genderSelection{
+		MALE,
+		FEMALE
+	}
+	public static void main(String[] args) {
+		
+		PersonDetails p=new PersonDetails("Sindhuja","Vembadi","FEMALE");
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p.getFirstName());
+		System.out.println("lastname :"+p.getLastName());
+		System.out.println("gender :"+p.getGender());
+		System.out.println("Number :"+p.getNumber());
+		
+		PersonDetails p1=new PersonDetails("Madhu","Vembadi","MALE");
+	
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p1.getFirstName());
+		System.out.println("lastname :"+p1.getLastName());
+		System.out.println("gender :"+p1.getGender());
+		System.out.println("Number :"+p1.getNumber());
+		
+		PersonDetails p2=new PersonDetails("Madhava","Yedla","MALE");
+		
+		System.out.println("PersonDetails Details");
+		System.out.println("_______________");
+		System.out.println("Firstname :"+p2.getFirstName());
+		System.out.println("lastname :"+p2.getLastName());
+		System.out.println("gender :"+p2.getGender());
+		System.out.println("Number :"+p1.getNumber());
+	
+	}
+}
+
+
+---------------------------------------------------------------------------------------------------------------
+Lab 3: Exploring Basic Java Class Libraries
+
+1).package vjitCapgemini;
+import java.util.*;
+
+public class String_Op {
+	public void Operation(String s1)
+	{
+		s1=s1+s1;
+		System.out.println("Added String is:"+s1);
+	}
+	public String OddReplace(String s1) {
+		String s2="";
+		for(int i=0;i<s1.length();i++)
+		{
+			if((i+1)%2!=0)
+				s2=s2+'#';
+			else
+				s2=s2+s1.charAt(i);
+		}
+		return s2;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		String_Op o=new String_Op();
+		o.Operation(s);
+		String var1=o.OddReplace(s);
+		System.out.println(var1);
+		
+		
+	}
+
+}
+sindhuja
+Added String is:sindhuja
+#i#d#u#a
+
+--------------------------------------------------------------------------------------------------------
+2)
+
+package vjitCapgemini;
+import java.util.*;
+import java.util.Scanner;
+
+public class SortingString { 
+	static boolean Sorted(String s) 
+	{ 
+		int n = s.length(); 
+		char c[] = new char [n];
+		for (int i = 0; i < n; i++) { 
+			c[i] = s.charAt(i); 
+		}
+	
+		for (int i = 0; i < n; i++) 
+			if (c[i] != s.charAt(i)) 
+				return false; 
+				
+		return true;	 
+		} 
+
+	
+	public static void main(String args[]) 
+	{ 
+		
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		if (Sorted(s)) 
+		System.out.println("Yes"); 
+		else
+			System.out.println("No");
+	}
+}
+Output: -
+ant
+Yes
+
+---------------------------------------------------------------------------------------------------------------
+
+3).package vjitCapgemini;
+import java.time.*;
+public class DateDuration {
+	
+         public void duration()
+         {
+        	
+        	 Scanner sc=new Scanner(System.in);
+      	   String dob=sc.next();
+        	 LocalDate pdate = LocalDate.of(dob);
+ 	        LocalDate now = LocalDate.now();
+ 	 
+ 	        Period dur = Period.between(pdate, now);
+ 	       System.out.printf("\nDuration is %d years, %d months and %d days old\n\n",dur.getYears(), dur.getMonths(), dur.getDays());
+ }
+           public static void main(String[] args)
+	    {
+	        DateDuration d = new DateDuration();
+	        d.duration();
+	     
+	     
+	    }
+}
+outPut:-
+
+1998-11-08
+
+Duration is 21 years, 3 months and 13 days old
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+4).package vjitCapgemini;
+
+import java.time.*;
+import java.time.temporal.*;
+
+public class DurationLocal {
+	 public void localdur()
+     {
+    	 LocalDate pdate = LocalDate.of(2014,12,11);
+	        LocalDate after= LocalDate.of(2016, 03, 18);
+	        /*return ChronoUnit.DAYS.between(pdate, after);*/
+	        Period dur = Period.between(pdate, after);
+	       System.out.printf("\nDuration is %d years, %d months and %d days old\n\n",dur.getYears(), dur.getMonths(), dur.getDays());
+}
+       public static void main(String[] args)
+    {
+        DurationLocal d = new DurationLocal();
+        d.localdur();
+     
+     
+    }
+}
+outPut:-
+1999-06-03
+2020-02-07
+
+Duration is 20 years, 8 months and 4 days old
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+7).package vjitCapgemini;
+import java.util.Scanner;
+public  class Person {
+public String getFullName(String firstName,String lastname){
+		String fullname=firstName+lastname;
+		return fullname;
+		
+	}
+	
+
+	public static void main(String[] args) {
+		//Person p=new Person("Bhavana","Reddy",'F');
+
+		Scanner sc=new Scanner(System.in);
+		Person P=new Person();
+		String firstName=sc.nextLine();
+		String lastName=sc.nextLine();
+	   String result=P.getFullName(firstName,lastName);
+	   System.out.println(result);
+        sc.close();
+	}
+
+}
+========================================================================================================================================
+Lab 4: Inheritance and Polymorphism
+----------------------------------------
+
+1).package vjitCapgemini;
+
+public class Account {
+static long count;
+private long accNum;
+protected double balance;
+private String name;
+private float age;
+Person accHolder;
+Account(long accNum,double balance,Person P)
+{
+	this.accNum=accNum;
+	this.balance=balance;
+	this.accHolder=P;
+}
+Account(long accNum,double balance,String name,float age)
+{
+	this.accNum=accNum;
+	this.balance=balance;
+this.name=name;
+this.age=age;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public float getAge() {
+	return age;
+}
+public void setAge(float age) {
+	this.age = age;
+}
+
+public long getAccNum() {
+	return accNum;
+}
+public void setAccNum(long accNum) {
+	this.accNum = accNum;
+}
+public double getBalance() {
+	return balance;
+}
+public void setBalance(double balance) {
+	this.balance = balance;
+}
+void deposit(double d)
+{
+this.balance=balance+d;
+}
+void withdraw(double d)
+{
+	this.balance=balance-d;
+}
+
+public static void main(String[] args)
+{
+Account s=new Account(count++,2000.0,"smith",22.0f);
+Account k=new Account(count++,3000.0,"kathy",22.0f);
+s.deposit(2000);
+k.withdraw(2000);
+System.out.println("smith:"+s.getBalance());
+System.out.println("kathy:"+k.getBalance());
+}	
+}
+----------------------
+OUT PUT: -
+smith:4000.0
+kathy:1000.0
+---------------------------------------------------------------------------------------------------------------
+2)package vjitCapgemini;
+
+ class SavingsAccount extends Account
+{
+	final double minimumBalance=1000;
+	SavingsAccount(long accnum, double balance, Person p) {
+		super(accnum, balance, p);
+	}
+	void withdraw(double d)
+	{
+		if(this.balance>=minimumBalance)
+			this.balance=this.balance-d;
+			else	
+			System.out.println("No amount withdrawn");
+		
+	}
+	
+
+class CurrentAccount extends Account{
+	final double overdraftLimit=1000;
+	CurrentAccount(long accnum, double balance, Person p) {
+		super(accnum, balance, p);
+}
+	
+	 void withdraw(double d)
+	 {
+		 if(this.balance<this.overdraftLimit)
+				System.out.println("Can't complete this transaction");
+				else
+					this.balance = this.balance-d;
+			} 
+	 
+	 }
+ }
+public class Maintenance {
+public static void main(String[] args)
+{
+	CurrentAccount c=new CurrentAccount();
+                SavingsAccount s=new SavingsAccount();
+c.withdraw();
+s.withdraw();
+}
+}
+======================================================================================================================================
+Lab 5: Abstract classes and Interfaces
+
+i).package com.cg.eis.bean;
+
+public class Employee {
+private int id;
+private String name;
+private double sal;
+private String designation;
+private String scheme;
+/*public Employee(int id, String name, double sal, String designation, String scheme) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.sal = sal;
+	this.designation = designation;
+	this.scheme = scheme;
+}*/
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public double getSal() {
+	return sal;
+}
+public void setSal(double sal) {
+	this.sal = sal;
+}
+public String getDesignation() {
+	return designation;
+}
+public void setDesignation(String designation) {
+	this.designation = designation;
+}
+public String getScheme() {
+	return scheme;
+}
+public void setScheme(String scheme) {
+	this.scheme = scheme;
+}
+}
+-----------------------------------------------------------------------------------------------------------------------------
+ii).package com.cg.eis.service;
+
+import com.cg.eis.bean.Employee;
+
+public class Service implements EmployeeService{
+	Employee e=new Employee();
+	
+	@Override
+	
+   public  void calculate(double sal )
+	{
+		if(sal<20000 && sal>5000)
+		{
+		e.setDesignation("System Associate ");
+		e.setScheme("scheme c");
+		System.out.println("desig="+e.getDesignation());
+		System.out.println("scheme="+e.getScheme());
+		}
+		else if(sal<40000 && sal>=20000)
+		{
+			e.setDesignation("Programmer");
+			e.setScheme("scheme B");
+			System.out.println("desig= "+e.getDesignation());
+			System.out.println("scheme= "+e.getScheme());
+		}
+		else if(sal>=4000)
+		{
+			e.setDesignation(" manager");
+			e.setScheme(" scheme A");
+			System.out.println("desig="+e.getDesignation());
+			System.out.println("scheme="+e.getScheme());
+		}
+		else
+		{
+			e.setDesignation(" clerk");
+			e.setScheme("no scheme");
+			System.out.println("desig="+e.getDesignation());
+			System.out.println("scheme="+e.getScheme());	
+		}
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+iii).package com.cg.eis.pl;
+import java.util.*;
+import com.cg.eis.bean.Employee;
+import com.cg.eis.service.Service;
+
+public class Details {
+
+	public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+System.out.println("enter details of employee1");
+
+int id1=sc.nextInt();
+String name1=sc.next();
+double sal1=sc.nextDouble();
+
+Employee e1=new Employee();
+
+e1.setId(id1);
+e1.setName(name1);
+e1.setSal(sal1);
+
+System.out.println("enter details of employee2");
+int id2=sc.nextInt();
+String name2=sc.next();
+double sal2=sc.nextDouble();
+
+Employee e2=new Employee ();
+
+e2.setId(id2);
+e2.setName(name2);
+e2.setSal(sal2);
+
+Service s=new Service();
+
+
+//s.calculate(sal2);
+
+System.out.println("employee 1: ID="+e1.getId()+" \nNAME="+e1.getName()+"\n SAL="+e1.getSal());
+s.calculate(sal1);
+System.out.println("employee 2:ID="+e2.getId()+" \nNAME="+e2.getName()+"\n SAL="+e2.getSal());
+s.calculate(sal2);
+
+}
+
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lab 6: Exception Handling
+
+1).package vjitCapgemini;
+
+class BlankException extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String str;
+	BlankException(String str){
+		this.str=str;
+	}
+	public String toString() {
+		return "Exception Occured : "+this.str;
+	}
+	
+}
+public class HandleEception {
+
+	public static void main(String[] args) {
+		PersonDetails person1 = new PersonDetails();
+		person1.setFirstName("");
+		person1.setLastName("");
+		if(person1.getFirstName().equals("") || person1.getLastName().equals("")) {
+			try {
+				throw new BlankException("Blank");
+			} catch (BlankException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.toString());
+			}
+		}
+
+	}
+
+}
+...
+Exception Occured : Blank
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2).package vjitCapgemini;
+
+class AgeException extends Exception{
+	private static final long serialVersionUID = 1L;
+	String str;
+	AgeException(String str){
+		this.str = str;
+	}
+	public String toString() {
+		return "Exception : "+this.str;
+	}
+}
+
+
+
+public class CheckAge {
+
+	public static void main(String[] args) {
+		Person person1 = new Person("Abhi",17);
+		try {
+		if(person1.age<18) {
+			throw new AgeException("Age should be greater than 18");
+		}
+		}
+		catch(AgeException e) {
+			System.out.println(e.toString());
+		}
+	}
+	
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+3).package com.cg.esi.exception;
+
+import com.cg.esi.bean.Employee;
+
+class ExceptionSalary extends Exception{
+	String str;
+	ExceptionSalary(String str){
+		this.str = str;
+	}
+	public String toString() {
+		return "Exception : "+str;
+	}
+}
+
+public class EmployeeException {
+	public static void main(String[] args) {
+		Employee e1 = new Employee(1,"Sindhuja",2000,"Manager");
+		try {
+		if(e1.getSalary()<3000) {
+			throw new ExceptionSalary("Salary less than 3000");
+		}
+		}
+		catch(ExceptionSalary e) {
+			System.out.println(e.toString());
+		}
+	}
+}
+...
+Exception : Salary less than 3000
+==============================================================================================================================================
+
+LAB 7: Arrays and Collections
+
+7.1)
+package vjitCapgemini;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Array {
+
+	public static void main(String[] args) {
+		String arr[]= {"Apple","Orange","Grapes","Banana"};
+		Arrays.sort(arr);
+		System.out.printf("Sorted array :\n"+Arrays.toString(arr));
+
+	}
+
+}
+out Put:-Sorted array :
+[Apple, Banana, Grapes, Orange]
+-------------------------------------------------------------------------------------------------------
+7.2)package vjitCapgemini;
+import java.util.*;
+public class ArraySort{
+	public static void main(String args[])
+	{
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Apple");
+		al.add("Orange");
+		al.add("Grapes");
+		al.add("Banana");
+		System.out.println("Before sorting");
+		for(String counter:al)
+		{
+			System.out.println(counter);
+		}
+		Collections.sort(al);
+		System.out.println("After sorting");
+		for(String counter:al)
+		{
+			System.out.println(counter);
+		}
+	}
+}
+
+----------------------------------------------------------------------------------------------------------
+7.3)
+package vjitCapgemini;
+import java.util.HashMap;
+import java.util.Map;
+public class employee {
+
+	public static void main(String[] args) {
+	
+       HashMap<Integer, String>map=new HashMap<>();
+       map.put(1,"vinitha");
+       map.put(2,"shivani");
+       map.put(3,"anjali");
+       map.put(4,"sindhuja");
+       System.out.println("Size of map is: "+map.size());
+       for(Map.Entry m:map.entrySet())
+       {
+    	   System.out.println(m.getValue());
+       }
+       String s=(String)map.remove(11);
+       System.out.println("remove:"+s);
+	}
+
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+Lab 8: Files IO
+
+8.1)
+package vjitCapgemini;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+public class ReadFile {
+
+	public static void main(String[] args) {
+
+		try {
+		File rf=new File("C:\\Filereverse.txt");
+		
+		Scanner myReader=new Scanner(rf);
+		while(myReader.hasNextLine()) {
+		String data=myReader.nextLine();
+		System.out.println(data);
+
+			StringBuffer buffer=new StringBuffer(data);
+			buffer=buffer.reverse();
+			String k=buffer.toString();
+			System.out.println(k);
+			
+		}
+		myReader.close();
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("File not found");
+		}
+
+}
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------
+8.2)
+package vjitCapgemini;
+import java.io.*;
+import java.util.*;    
+public class Even {
+
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+		FileReader fr=new FileReader("E:\\numbers.txt");
+		BufferedReader br=new BufferedReader(fr);
+		String data=null;
+		int a=0;
+		while((data=br.readLine())!=null)
+		{
+			Scanner sc=new Scanner(data);
+			sc.useDelimiter(",");
+			while(sc.hasNext())
+			{
+				a=Integer.parseInt(sc.next());
+				if(a%2==0)
+					System.out.println(a);
+			}
+			
+		}
+		fr.close();
+		br.close();
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+8.3)
+
+package com.cg.eis.pl;
+
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+import java.util.Scanner;
+
+import com.cg.eis.bean.Employee;
+
+public class EmpUser {
+	
+	
+
+	static void checkSal(double sal) 
+	{ 
+		if (sal <= 3000) 
+		{ 
+			try
+			{
+				throw new EmployeeException();
+			}
+			catch(EmployeeException ee)
+			{
+				System.out.println(ee.getMessage());
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws Exception
+	{
+		Scanner obj = new Scanner(System.in);
+		
+	
+		EmpUser e=new EmpUser();
+		
+		System.out.println("Enter the details");
+		System.out.println("Enter the  name");
+		String name = obj.next();
+		System.out.println("Enter salary");
+		double sal = obj.nextDouble();
+		System.out.println("Enter designation");
+		String designation = obj.next();
+	
+		
+		Employee me = new Employee(name,sal,designation);
+		checkSal(sal);
+		me.calculate();
+		System.out.println("Insurance Scheme to "+me.getName()+"is:"+me.getInscheme());
+		System.out.println(me.toString());
+
+		FileOutputStream fos = new FileOutputStream(new File("E://file.txt"));
+	
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(me);
+		
+		obj.close();
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Lab 9: Introduction to Junit
+
+1).package junitPack;
+
+public class Person {
+	private String firstName;
+	private String lastName;
+	
+	public Person(String fname, String lname)
+	{
+		if(fname==null&&lname==null)
+		{
+			throw new IllegalArgumentException("Both Names Cannot be NULL");
+		}
+		this.firstName=fname;
+		this.lastName=lname;
+	}
+	public String getFullname()
+	{
+		String first=(this.firstName!=null)?this.firstName:"?";
+		String last=(this.lastName!=null)?this.lastName:"?";
+		return first+" "+last;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+}
+
+
+package junitPack;
+import org.junit.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class TestPerson2 {
+
+	@Test
+	public void testGetFullName()
+	{
+		System.out.println("From TestPerson2");
+		Person per=new Person("Robert","King");
+		assertEquals("Robert King",per.getFullname());
+	}
+	@Test(expected= IllegalArgumentException.class)
+	public void testNullslnName()
+	{
+		System.out.println("from TestPerson2 testing exceptions");
+		Person per1=new Person(null,null);
+	}
+	
+
+}
+OUTPUT: -
+From TestPerson2
+from TestPerson2 testing exceptions
+-----------------------------------------------------------------------------------------------------------------
+9.2)
+package junitPack;
+
+public class Date 
+	{
+	int intDay;
+	int intMonth;
+	int intYear;
+
+	Date(int intDay, int intMonth, int intYear)  	{
+		this.intDay = intDay;
+	this.intMonth = intMonth;
+	this.intYear = intYear;
+	}
+	// setter and getter methods
+	 void setDay(int intDay)	
+	{
+		this.intDay = intDay;
+	}
+		int getDay( )		
+	{
+		return  this.intDay;
+	}
+
+	void setMonth(int intMonth)
+	{
+		this.intMonth = intMonth;
+	}
+
+	int getMonth( )
+	{
+		return  this.intMonth;
+	}
+
+	void setYear(int intYear)
+	{
+		this.intYear=intYear;
+	}
+
+
+
+	int getYear( )
+	{
+		return  this.intYear;
+	}
+	public String toString()    
+	{
+		return	"Date is :"+intDay+"/"+intMonth+"/"+intYear;
+	}
+
+
+	} // Date class
+
+
+package junitPack;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+public class TestPerson
+{
+@Test
+public void SetDay()
+{
+	System.out.println("from TestPerson");
+	Date dt=new Date(08,11,1998);
+	assertEquals(08,dt.getDay());	
+}
+@Test
+public void SetMonth()
+{
+	System.out.println("from TestPerson");
+	Date dt=new Date(08,11,1998);
+	assertEquals(11,dt.getMonth());	
+}
+@Test
+public void SetYear()
+{
+	System.out.println("from TestPerson");
+	Date dt=new Date(08,11,1998);
+	assertEquals(1998,dt.getYear());	
+}
+}
+
+OUTPUT: -
+from TestPerson
+from TestPerson
+from TestPerson
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lab 10: Property Files and JDBC 4.0
+
+10.1
+package vjitCapgemini;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+public class PersonProp {
+public static void main(String[] args) throws IOException
+{
+	Properties pp=new Properties();
+	FileReader fr=new FileReader("C:\\Users\\HP\\workspace\\JDBCProject1\\src\\vjitCapgemini\\PersonProps.properties");
+System.out.println("After Loading");
+pp.load(fr);
+System.out.println(pp);
+System.out.println("using getProperty() method");
+System.out.println(pp.getProperty("name"));
+System.out.println(pp.getProperty("rollno"));
+fr.close();
+}
+}
+=================================================================================================================================
+Lab 11: Layered Architecture
+---------------------------------
+package shop.mobilesales.details;
+
+import java.sql.Date;
+
+import shop.mobilesales.exception.PurchaseException;
+
+public class Details 
+{
+	int purchaseid;
+	String cname;
+	String name;
+	double price;
+	int quantity;
+	String mailid;
+	String phoneno;
+	Date purchasedate;
+	int mobileid;
+	
+	public int getPurchaseid() 
+	{
+		return purchaseid;
+	}
+	public void setPurchaseid(int purchaseid) 
+	{
+		this.purchaseid = purchaseid;
+	}
+	public String getCname() 
+	{
+		return cname;
+	}
+	public void setCname(String cname) 
+	{
+		this.cname = cname;
+	}
+	public String getMailid() 
+	{
+		return mailid;
+	}
+	public void setMailid(String mailid) 
+	{
+		this.mailid = mailid;
+	}
+	public String getPhoneno() 
+	{
+		return phoneno;
+	}
+	public void setPhoneno(String phoneno) 
+	{
+		this.phoneno = phoneno;
+	}
+	public Date getPurchasedate() 
+	{
+		return purchasedate;
+	}
+	public void setPurchasedate(Date purchasedate) 
+	{
+		this.purchasedate = purchasedate;
+	}
+	
+	public int getMobileid() 
+	{
+		return mobileid;
+		
+	}
+	public void setMobileid(int mobileid) 
+	{
+		this.mobileid = mobileid;
+	}
+	public String getName() 
+	{
+		return name;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	public double getPrice() 
+	{
+		return price;
+	}
+	public void setPrice(double price) 
+	{
+		this.price = price;
+	}
+	public int getQuantity() 
+	{
+		return quantity;
+	}
+	public void setQuantity(int quantity)
+	{
+		this.quantity = quantity;
+	}
+}
+------------------------------------------------------------------------
+package shop.mobilesales.exception;
+
+@SuppressWarnings("serial")
+public class PurchaseException extends Exception 
+{
+	public PurchaseException(String s)
+	{
+		super(s);
+	}
+}
+-------------------------------------------------------------------------
+package shop.mobilesales.main;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import shop.mobilesales.exception.PurchaseException;
+import shop.mobilesales.service.*;
+
+public class Mobilepurchase 
+{
+	public static void main(String [] args)
+	{
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter name");
+		String name = sc.nextLine();
+		System.out.println("enter email");
+		String email=sc.nextLine();
+		System.out.println("enter phone");
+		String phone =sc.nextLine();
+		System.out.println("enter mobile id");
+		int mobileid=sc.nextInt();
+		System.out.println("enter purchase id");
+		int purchaseid=sc.nextInt();
+		Date date = java.sql.Date.valueOf(LocalDate.now());
+
+		Connect c=new Connect(purchaseid,name,phone,email,date,mobileid);
+		System.out.println("Menu:");
+		System.out.println("1.Insert values and update quantity");
+		System.out.println("2.View available mobiles");
+		System.out.println("3.Delete a mobile");
+		System.out.println("4.View mobiles based on range");
+		System.out.println("----------------------------");
+		System.out.println("Enter your choice:");
+		int ch = sc.nextInt();
+		switch(ch)
+		{
+		 case 1: c.insertPurchaseDetal();
+		 			break;
+		 case 2: c.SelectMobile();
+		 			break;
+		 case 3:	System.out.println("Enter the mobile id you want to delete:");
+					int mid = sc.nextInt();
+					c.DeleteMobile(mid);
+					break;
+		 case 4:   double r1,r2;
+			       System.out.println("Enter the minimum price:");
+			       r1 = sc.nextDouble();
+			       System.out.println("Enter the maximum price:");
+			       r2 = sc.nextDouble();
+			       c.SearchMobile(r1, r2);
+			       break;
+		default: break;
+		}
+		
+		
+	}
+	
+
+}
+-----------------------------------------------------------------
+package shop.mobilesales.service;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
+import java.io.*;
+
+import oracle.jdbc.pool.OracleDataSource;
+import shop.mobilesales.details.Details;
+import shop.mobilesales.exception.PurchaseException;
+public class Connect 
+{
+	Details d=new Details();
+	private int purchaseid;
+	private String cname;
+	private String phone;
+	private Date date;
+	private int mobileid;
+	private String email;
+	
+	
+	public Connect(int purchaseid, String cname,String phone,String email,Date date,int mobileid)
+	{
+		this.purchaseid=purchaseid;
+		this.cname=cname;
+		this.phone=phone;
+		this.date=date;
+		this.mobileid=mobileid;
+		this.email=email;
+	}
+
+	
+	
+	public void insertPurchaseDetal()
+	{
+			 try 
+			 {
+				 Properties props = new Properties();
+				 props.load(new FileInputStream("Fcapconnection.properties.txt"));
+				 Class.forName(props.getProperty("name"));
+				 String url = props.getProperty("url");
+				 String uname = props.getProperty("uname");
+				 String pwd = props.getProperty("password");
+				 Connection conn = DriverManager.getConnection(url,uname,pwd);
+				 String query="SELECT quantity FROM mobiles where mobileid=";
+				 PreparedStatement pr= conn.prepareStatement(query);
+				 pr.setInt(1, mobileid);
+				 ResultSet rs= pr.executeQuery();
+				 if(rs.next())
+				 {
+					int quantity=rs.getInt(1);
+					d.setQuantity(quantity);
+				 }			        
+			 }
+			 catch(Exception e)
+			 {
+				 System.out.println(e.getMessage());
+			 }
+		     try 
+		     {	
+		    	 int quantity=d.getQuantity();
+				 if(quantity==0)
+				 {
+					 Properties props = new Properties();
+					 props.load(new FileInputStream("Fcapconnection.properties.txt"));
+					 Class.forName(props.getProperty("name"));
+					 String url = props.getProperty("url");
+					 String uname = props.getProperty("uname");
+					 String pwd = props.getProperty("password");
+					 Connection conn = DriverManager.getConnection(url,uname,pwd);
+					 PreparedStatement pr=conn.prepareStatement("insert into piurchasedetails values (,,,,,)");
+					 pr.setInt(1, purchaseid);
+					 pr.setString(2,cname);
+					 pr.setString(3,email);
+					 pr.setString(4,phone);
+					 pr.setDate(5,date);
+					 pr.setInt(6,mobileid);
+					 int count=pr.executeUpdate();
+					 System.out.println("--------------------------------");
+					 System.out.println("Thanks for purchasing!!!!");
+					 System.out.println("Purchase Details successfully entered into database");
+					 System.out.println("--------------------------------");
+				  }
+				  else
+				  {
+					  throw new PurchaseException("quantity cant be below zero");
+				  }
+			}
+		    catch (Exception e)
+		    {
+		    	System.out.println(e.getMessage());
+		    }
+		    try 
+		    {
+		    	Properties props = new Properties();
+				 props.load(new FileInputStream("Fcapconnection.properties.txt"));
+				 Class.forName(props.getProperty("name"));
+				 String url = props.getProperty("url");
+				 String uname = props.getProperty("uname");
+				 String pwd = props.getProperty("password");
+				 Connection conn = DriverManager.getConnection(url,uname,pwd);
+	        	PreparedStatement pr=conn.prepareStatement("update mobiles set quantity=quantity-1 where mobileid=");
+	        	pr.setInt(1, mobileid);
+	        	int count1=pr.executeUpdate();
+	        	System.out.println("--------------------------------");
+	        	System.out.println("Quantity updated");
+	        	System.out.println("------------------------------");
+	        	
+	         }
+		     catch (Exception e)
+		     {
+		    	 System.out.println("e.getMessage()");
+		     }
+	}	
+
+		
+	
+	public void SelectMobile()
+	{
+			
+			try
+			{
+				Properties props = new Properties();
+				 props.load(new FileInputStream("Fcapconnection.properties.txt"));
+				 Class.forName(props.getProperty("name"));
+				 String url = props.getProperty("url");
+				 String uname = props.getProperty("uname");
+				 String pwd = props.getProperty("password");
+				 Connection conn = DriverManager.getConnection(url,uname,pwd);
+				Statement s= conn.createStatement();
+				ResultSet rs= s.executeQuery("Select * from mobiles");
+				System.out.println("Mobiles available are");
+				System.out.println("------------------------------");
+				System.out.println("IdtNametPricetQuantity");
+				System.out.println("--------------------------------");
+				while(rs.next())
+				{
+					System.out.println(rs.getInt(1)+"  " +rs.getString(2)+" "+rs.getInt(3)+" "+rs.getInt(4));
+				}
+			} 
+			catch (Exception e)
+			{
+				System.out.println("error");
+			}
+	}
+	public void DeleteMobile(int mid)
+	
+	{
+		try
+		{
+			Properties props = new Properties();
+			props.load(new FileInputStream("Fcapconnection.properties.txt"));
+			Class.forName(props.getProperty("name"));
+			String url = props.getProperty("url");
+			String uname = props.getProperty("uname");
+			String pwd = props.getProperty("password");
+			Connection conn = DriverManager.getConnection(url,uname,pwd);
+			PreparedStatement ps1 = conn.prepareStatement("delete from purchasedetails where mobileid= ");
+			ps1.setInt(1, mid);
+			ps1.executeUpdate();
+			PreparedStatement pr=conn.prepareStatement("delete from mobiles where mobileid=");
+			pr.setInt(1,mid);
+			pr.executeUpdate();
+			System.out.println("Mobile deleted successfully");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Errro+e.getMessage()");
+		}
+		
+	}
+
+
+	public void SearchMobile(double range1, double range2)
+	{
+		try
+		{
+			Properties props = new Properties();
+			props.load(new FileInputStream("Fcapconnection.properties.txt"));
+			Class.forName(props.getProperty("name"));
+			String url = props.getProperty("url");
+			String uname = props.getProperty("uname");
+			String pwd = props.getProperty("password");
+			Connection conn = DriverManager.getConnection(url,uname,pwd);
+		
+			PreparedStatement pr= conn.prepareStatement("Select mobileid,name,price,quantity from mobiles where price between  and " );
+			pr.setDouble(1, range1);
+			pr.setDouble(2,range2);
+			ResultSet rs=pr.executeQuery();
+			int price = rs.getInt(3);
+			System.out.println("--------------------------------");
+			System.out.println("The mobiles in your selected price range");
+			System.out.println("--------------------------------");
+			while(rs.next())
+			{
+				if(range1=price && range2=price && range1!=range2)
+				{
+					System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3)+" "+rs.getInt(4));
+				}
+				else
+				{
+					throw new PurchaseException("please select a valid range");
+				}
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("ex.getMessage()");
+		}
+	}
+}
+-----------------------------------------------------------------
+package shop.mobilesales.service;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
+import org.junit.Test;
+
+public class TestConnect {
+
+	@Test (expected = Exception.class)
+	public void testInsert()throws Exception 
+	{
+		Date date = java.sql.Date.valueOf(LocalDate.now());
+		Connect c = new Connect(1345,"sk","123456","1234",date,1001);
+		c.insertPurchaseDetal();
+	}
+	
+	@Test(expected = Exception.class)
+	public void testSelect()throws Exception
+	{
+		Date date = java.sql.Date.valueOf(LocalDate.now());
+		Connect c = new Connect(1345,"sk","123456","1234",date,1001);
+		c.SearchMobile(2000, 5000);
+	}
+
+}
+
+
+
+================================================================================================================================================
+
+
+Lab 12: Log4j
+----------------------
+package log4jPack;
+
+	import org.apache.logging.log4j.Logger;
+   import org.apache.logging.log4j.LogManager;
+   
+
+	public class HelloWorld 
+	{ 
+	static Logger logg = LogManager.getLogger(HelloWorld.class.getName());  
+	public static void main(String[] args)
+	{         
+		PropertyConfigurator.configure("log4j.properties");
+		logg.debug("Hello World!");  
+		logg.warn("Sample warn message");    
+		logg.error("Sample error message");   
+	} 
+}
+
+package log4jPack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Log4jDemo {
+
+  //create a logger for Log4jDemo class
+	static Logger logger=LogManager.getLogger(Log4jDemo.class.getName());
+
+public static void main(String args[]) {
+
+  // create log messages for each priority level
+	logger.error("logged");
+	logger.debug("not logger");
+	logger.info("log info");
+	logger.warn("warning");
+	logger.fatal("system fatal");
+	
+      }
+}
+-------------------------------------------------------------------------------------------------------------------
+
+package log4jPack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import labbean.Message;
+
+public class Log4jDemo2
+{
+	static Logger log=LogManager.getLogger(Message.class.getName());
+   //create a logger for Log4jDemo2 class
+
+    public static void main(String args[])
+    {
+
+        for(int i=1 ; i<50000; i++)
+        {
+           System.out.println("Counter = " + i);
+           log.debug("This is my debug message. Counter = " + i);
+           log.error("error message");
+       	   log.info("info message");
+       	   log.warn("warning message");
+       	   log.fatal("fatal message");
+       	   
+           // write log message statements for remaining priority levels 
+		  //in the same way
+            }
+      }
+}
+
+--------------------------------------------------------------------------------------------
+package log4jPack;
+import labbean.Message;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+public class Log4jDemo3 
+   {
+
+    //create a logger for Log4jDemo3 class
+	static Logger logg=LogManager.getLogger(Log4jDemo3.class.getName());
+
+     public static void main(String args[]) 
+     {
+    	 
+
+             //create an instance of Message class
+	         @SuppressWarnings("unused")
+			Logg log=Logg.getLogg("Message");
+	         Message m =new Message();
+             //call setMessage() method
+	         m.setMessage("msg");
+	         
+             //print the log messages using getMessage() method
+	         m.getMessage();
+	
+             // write log message statements for each priority level
+	         logg.error("logged");
+	         logg.debug("not logger");
+	         logg.info("log info");
+	         logg.warn("warning");
+	         logg.fatal("system fatal");
+      }
+}
+
+----------------------------------------------------------------
+package labbean;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import log4jPack.Log4jDemo;
+
+@SuppressWarnings("unused")
+public class Message
+{
+
+//create a logger for Message class
+	static Logger logg=LogManager.getLogger(Message.class.getName());
+
+private String msg;
+
+public void setMessage(String msg) 
+     {
+            this.msg = msg;
+            //this.getMessage();
+            logg.error("error message");
+        	logg.debug("debug message");
+        	logg.info("info message");
+        	logg.warn("warning message");
+        	logg.fatal("fatal message");
+            
+            //log the messages for each priority level
+      }
+public String getMessage() 
+       {
+
+            //log messages for each priority level
+	        logg.error("logged");
+          	logg.debug("not logger");
+        	logg.info("log info");
+	        logg.warn("warning");
+	        logg.fatal("system fatal");
+	        
+            return msg;
+       }
+}
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lab 13: Multithreading
+
+13.1)package vjitThread;
+
+import java.io.*;
+
+public class CopyDataThread 
+{
+	public CopyDataThread(FileReader fi,FileWriter fw)throws Exception
+	{
+		BufferedReader br = new BufferedReader(fi);
+		BufferedWriter bw = new BufferedWriter(fw);
+		String data = null;
+		int j=10;
+		while((data=br.readLine())!=null)
+		{
+			char[] c = data.toCharArray();
+			for(int i=0;i<c.length;i++)
+			{
+				bw.write(c[i]);
+				if(i==j)
+				{
+					j+=10;
+					System.out.println("10 characters copied");
+					Thread.sleep(5000);
+				}	
+			}
+			
+		}
+		br.close();
+		bw.close();
+		fi.close();
+		fw.close();
+	}
+
+
+}
+package vjitThread;
+import java.util.*;
+
+public class ThreadTimer implements Runnable
+{
+
+	public static void main(String[] args) 
+	{
+		//Task t1 = new Task("task1");
+		Timer t = new Timer();
+		//t.schedule(task,10000);
+	}
+
+	public void run() 
+	{
+		
+	}
+
+}
+package vjitThread;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class FileProgram extends Thread 
+{
+	public static void main(String[] args)throws Exception 
+	{
+		FileReader fi = new FileReader("C:\\Users\\HP\\workspace\\JDBCProject1\\src\\vjitCapgemini\\PersonProps.properties");
+		FileWriter fw = new FileWriter("E:\\Thread\\target.txt");
+		CopyDataThread c = new CopyDataThread(fi,fw);
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+13.2)
+package vjitThread;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MyTimerTask extends TimerTask {
+
+    @Override
+    public void run() {
+        System.out.println("Timer task started at:"+new Date());
+        completeTask();
+        System.out.println("Timer task finished at:"+new Date());
+    }
+
+    private void completeTask() {
+        try {
+            //assuming it takes 5 secs to complete the task
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void main(String args[]){
+        TimerTask timerTask = new MyTimerTask();
+        //running timer task as daemon thread
+        Timer timer = new Timer(true);
+        timer.scheduleAtFixedRate(timerTask, 0, 10*1000);
+        System.out.println("TimerTask started");
+        //cancel after sometime
+        try {
+            Thread.sleep(120000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        timer.cancel();
+        System.out.println("TimerTask cancelled");
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+ 
+output: -
+TimerTask started
+Timer task started at:Fri Feb 21 20:23:19 IST 2020
+Timer task finished at:Fri Feb 21 20:23:25 IST 2020
+Timer task started at:Fri Feb 21 20:23:29 IST 2020
+Timer task finished at:Fri Feb 21 20:23:34 IST 2020
+Timer task started at:Fri Feb 21 20:23:39 IST 2020
+Timer task finished at:Fri Feb 21 20:23:44 IST 2020
+Timer task started at:Fri Feb 21 20:23:49 IST 2020
+Timer task finished at:Fri Feb 21 20:23:54 IST 2020
+Timer task started at:Fri Feb 21 20:23:59 IST 2020
+Timer task finished at:Fri Feb 21 20:24:04 IST 2020
+Timer task started at:Fri Feb 21 20:24:09 IST 2020
+Timer task finished at:Fri Feb 21 20:24:14 IST 2020
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------
+Lab 14: Lambda Expressions and Stream API
+14.1)package vjitLambdaExpressions;
+import java.util.Scanner;
+import java.util.function.BiFunction;
+
+public class PowerExpression {
+
+	public static  void main(String args[])
+	{
+		PowerFunc pf= (x,y)-> Math.pow(x,y);
+		Scanner sc=new Scanner(System.in);
+		double x,y;
+		System.out.println("Enter x value");
+		x=sc.nextDouble();
+		System.out.println("Enter y value");
+		y=sc.nextDouble();
+		double res=pf.powerVal(x,y);
+		System.out.println("Power using lambda expression is "+res);
+		BiFunction<Double,Double,Double> bi=(a,b) ->Math.pow(x,y);
+		System.out.println("Using Bi function:"+bi.apply(x,y));
+	}
+}
+package vjitLambdaExpressions;
+
+public interface PowerFunc {
+
+	double powerVal(double x, double y);
+
+	
+}
+output: -
+Enter x value
+5
+Enter y value
+2
+Power using lambda expression is 25.0
+Using Bi function:25.0
+-------------------------------------------------------------------------------------------------------------
+14.2)
+package vjitLambdaExpressions;
+
+import java.util.Scanner;
+import java.util.function.Function;
+
+public class CharSpace {
+
+	private static void formatString(String str) {
+		Function<String,String> f= (s)->
+		{StringBuilder result = new StringBuilder();
+		for (int i = 0; i < str.length(); i++) {
+		   if (i > 0) {
+		      result.append(" ");
+		    }
+
+		   result.append(str.charAt(i));
+		}
+
+		return result.toString();
+		};
+		String res=f.apply(str);
+		System.out.println(res);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str=sc.next();
+		formatString(str);
+		sc.close();
+	}
+}
+
+
+output: -Enter the String
+sindhu
+s i n d h u
+------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+14.3)package vjitLambdaExpressions;
+import java.util.Scanner;
+import java.util.function.BiPredicate;
+
+
+public class UserPasswordAuthentication {
+
+		public static void check(String user,String pwd)
+		{
+			BiPredicate<String,String> bp= (u,p)->
+                          {
+				if(user.equals("sindhuja") && pwd.equals("sindhu123"))
+					return true;
+				else
+				return false;
+			};
+					System.out.println(bp.test(user, pwd));
+		}
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter user name");
+			String uname=sc.next();
+			System.out.println("Enter password");
+			String pwd=sc.next();
+			check(uname,pwd);
+		}
+
+	}
+
+
+------------------------------------------------------------------------------------------------------------------
+14.4)
+package vjitLambdaExpressions;
+interface MethodReferenceInterface
+{
+	MethodReferenceEx display(String a,String b);
+}
+class MethodReferenceEx
+{
+	String f,l;
+
+	public MethodReferenceEx(String f, String l) {
+		//super();
+		this.f = f;
+		this.l = l;
+		System.out.println(f+" "+l);
+	}
+
+	public String getF() {
+		return f;
+	}
+
+	public void setF(String f) {
+		this.f = f;
+	}
+
+	public String getL() {
+		return l;
+	}
+
+	public void setL(String l) {
+		this.l = l;
+	}
+	
+}
+public class MethodReferenceDemo {	
+	public static void main(String args[])
+	{
+		MethodReferenceInterface mri= MethodReferenceEx::new;
+		mri.display("sindhuja", "vembadi");
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------
+14.5)package vjit;
+import java.util.Scanner;
+import java.util.function.Function;
+
+public class Factorial {
+
+		public static int factorial(int n)
+		{
+			int res=1;
+			for(int i=1;i<=n;i++)
+			{
+				 res=res*i;
+			}
+			return res;
+		}
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter num for factorial");
+			int n=sc.nextInt();
+			Function<Integer,Integer> fact=Factorial::factorial;
+			System.out.println("factorial = "+fact.apply(n));
+			
+			sc.close();
+		}
+
+	}
+
+
+-------------------------------------------------------------------------------------------------------------------
